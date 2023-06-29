@@ -1,0 +1,54 @@
+{
+  "challenges": [
+    {
+      "id": "effb6873-1e0b-4ec1-9cb2-42cd723e65c6",
+      "name": "Challenge01",
+      "tags": ["pwn", "web", "crypto"],
+      "points": 123,
+      "solved": 45,
+      "comment": "これはテストです。Challenge01!",
+      "createdAt": "2019-01-03T00:00:00.000Z",
+      "updatedAt": "2019-01-03T00:00:00.000Z"
+    },
+    {
+      "id": "409af0a1-f5c6-4a4b-93f8-bf368b37d0ae",
+      "name": "Challenge02",
+      "tags": ["pwn", "reversing"],
+      "points": 500,
+      "solved": 1,
+      "comment": "0202これはテストです。Challenge02!",
+      "createdAt": "2019-01-02T00:00:00",
+      "updatedAt": "2019-01-02T00:00:00"
+    },
+    {
+      "id": "8f7687ad-b6b6-4bd1-a723-b81ecd237a3c",
+      "name": "Challenge03",
+      "tags": ["forensics", "crypto"],
+      "points": 456,
+      "solved": 4,
+      "comment": "0202これはテストです。Challenge03!",
+      "createdAt": "2019-01-01T00:00:00",
+      "updatedAt": "2019-01-01T00:00:00"
+    },
+    {
+      "id": "3ea0f1ba-06dd-49dd-b436-79fcc72c705b",
+      "name": "Challenge04",
+      "tags": ["pwn", "crypto"],
+      "points": 375,
+      "solved": 6,
+      "comment": "asdffdsa。Challenge04!",
+      "createdAt": "2019-01-01T00:00:00",
+      "updatedAt": "2019-01-01T00:00:00"
+    },
+    {
+      "id": "0e497b6e-a390-46cf-a31d-e7dbab4f36a0",
+      "name": "Challenge05",
+      "tags": ["warmup", "crypto"],
+      "points": 50,
+      "solved": 100,
+      "comment": "kantan。Challenge05!",
+      "createdAt": "2019-01-01T00:00:00",
+      "updatedAt": "2019-01-01T00:00:00"
+    }
+  ]
+}
