@@ -1,0 +1,54 @@
+@import "../../styles/util";
+
+.card {
+  @include clickable;
+  background-color: transparent;
+  border: 0.8px solid;
+  border-radius: 8px;
+  margin: 10px;
+  width: 250px;
+  height: 153px;
+  padding: 16px;
+  padding-bottom: 24px;
+  align-items: center;
+  .wrap__card_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 0.5em;
+  }
+  &_title {
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.0075em;
+  }
+  &_tags {
+    display: flex;
+    flex-direction: row;
+    &_unit {
+      max-width: 100%;
+      display: inline-flex;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.8125rem;
+      align-items: center;
+      color: rgba(0, 0, 0, 0.87);
+      background-color: rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      height: 24px;
+      margin: 0px 0px 0px 8px;
+      padding: 0px 10px 0px 10px;
+    }
+  }
+}
+
+.wrap__points {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.wrap__solved {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
