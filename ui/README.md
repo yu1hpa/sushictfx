@@ -1,0 +1,5 @@
+# SushiCTFx UI
+
+```
+pnpm dev
+```
