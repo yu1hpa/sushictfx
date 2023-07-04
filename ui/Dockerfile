@@ -1,3 +1,7 @@
 FROM node:18-alpine
-RUN npm i -g pnpm
+
 WORKDIR /ui
+COPY package.json .
+RUN npm i -g pnpm
+RUN pnpm i
+
