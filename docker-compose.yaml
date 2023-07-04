@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  front:
+    build:
+      context: ./ui/
+      dockerfile: Dockerfile
+    volumes:
+      - ./ui:/ui
+    command: 'pnpm dev'
+    ports:
+      - "8000:3000"
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
+    volumes:
+      - ./server:/server
+    command: /bin/sh -c "cargo run"
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:
+
