@@ -20,7 +20,9 @@ services:
       - db
     volumes:
       - ./server:/server
-    command: /bin/sh -c "cargo run"
+      - cargo-cache:/usr/local/cargo/registry
+      - target-cache:/server/target
+    command: /bin/sh -c "cargo watch -x run"
   db:
     image: mongo
     restart: always
@@ -34,4 +36,6 @@ services:
 
 volumes:
   db:
+  cargo-cache:
+  target-cache:
 
