@@ -12,3 +12,8 @@ pub struct Team {
     pub points: u32,
     pub solved_ids: Vec<u32>,
 }
+
+#[derive(Serialize, Deserialize)]
+pub struct Teams {
+    pub teams: Vec<Team>
+}
