@@ -1,33 +1,10 @@
 mod models;
 mod migrate;
-use actix_web::{
-    get, 
-    web, App, HttpResponse, HttpServer, Responder
-};
-use mongodb::{Client, bson::doc};
-use models::teams::{Team, Teams};
-//use migrate::teams::migrate_database;
-use futures::stream::TryStreamExt;
-
-
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
-}
-
-#[get("/api/v1/teams")]
-async fn get_teams(client: web::Data<Client>) -> HttpResponse {
-    let db = client.database("sushictfx-db");
-    let collection = db.collection::<Team>("teams");
-    let mut cursor = collection.find(doc! {}, None)
-        .await
-        .expect("Error getting teams detail");
-    let mut teams = Teams{teams: vec![]};
-    while let Some(_team) = cursor.try_next().await.unwrap() {
-        teams.teams.push(_team);
-    }
-    HttpResponse::Ok().json(teams)
-}
+mod router;
+use actix_web::{web, App,  HttpServer};
+use mongodb::Client;
+use router::default::hello;
+use router::teams::get_teams;
 
 #[cfg(test)]
 mod tests {
