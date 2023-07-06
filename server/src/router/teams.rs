@@ -11,8 +11,8 @@ async fn get_teams(client: web::Data<Client>) -> HttpResponse {
         .await
         .expect("Error getting teams detail");
     let mut teams = Teams{teams: vec![]};
-    while let Some(_team) = cursor.try_next().await.unwrap() {
-        teams.teams.push(_team);
+    while let Some(team) = cursor.try_next().await.unwrap() {
+        teams.teams.push(team);
     }
     HttpResponse::Ok().json(teams)
 }
